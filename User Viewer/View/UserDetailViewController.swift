@@ -20,17 +20,6 @@ class UserDetailViewController: UIViewController {
 			userData[1].value = user.email
 			userData[2].value = user.phone
 			userData[3].value = user.website
-			
-			// Table View should be update on main thread.
-			DispatchQueue.main.async {
-				self.tableView.reloadData()
-				
-				// To ensure layout is calculated before assigning a height
-				self.tableView.layoutIfNeeded()
-				
-				self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
-				self.tableView.isHidden = false
-			}
 		}
 	}
 	
@@ -55,6 +44,14 @@ class UserDetailViewController: UIViewController {
 		tableView.register(UINib(nibName: "UserDetailCell", bundle: nil), forCellReuseIdentifier: "UserDetailCell")
 		
 		tableView.layer.cornerRadius = 20.0
+		
+		self.tableView.reloadData()
+		
+		// To ensure layout is calculated before assigning a height
+		self.tableView.layoutIfNeeded()
+		
+		self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
+		self.tableView.isHidden = false
 	}
 	
 }

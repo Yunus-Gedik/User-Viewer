@@ -52,15 +52,14 @@ class UserListViewController: UIViewController {
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "goToUserDetail" {
+		if(segue.identifier == "goToUserDetail") {
 			guard let indexPath = tableView.indexPathForSelectedRow else { return }
+
+			// To create a bounce like effect on table view cell click
+			tableView.deselectRow(at: indexPath, animated: true)
+
 			let userDetailVC = segue.destination as! UserDetailViewController
 			userDetailVC.user = userList![indexPath.row]
-			
-			// To create a bounce like effect on table view cell click
-			if let selectedIndexPath = tableView.indexPathForSelectedRow {
-				tableView.deselectRow(at: selectedIndexPath, animated: true)
-			}
 		}
 	}
 	
