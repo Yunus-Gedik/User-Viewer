@@ -33,10 +33,15 @@ class UserListViewController: UIViewController {
 		userDataFetcher.fetchUsers { result in
 			switch result {
 			case .success(let users):
-				self.userList = users + users
+				self.userList = users
+				
+				// Table View should be update on main thread.
 				DispatchQueue.main.async {
 					self.tableView.reloadData()
+					
+					// To ensure layout is calculated before assigning a height
 					self.tableView.layoutIfNeeded()
+					
 					self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
 					self.tableView.isHidden = false
 				}
@@ -51,6 +56,11 @@ class UserListViewController: UIViewController {
 			guard let indexPath = tableView.indexPathForSelectedRow else { return }
 			let userDetailVC = segue.destination as! UserDetailViewController
 			userDetailVC.user = userList![indexPath.row]
+			
+			// To create a bounce like effect on table view cell click
+			if let selectedIndexPath = tableView.indexPathForSelectedRow {
+				tableView.deselectRow(at: selectedIndexPath, animated: true)
+			}
 		}
 	}
 	

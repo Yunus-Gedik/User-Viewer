@@ -21,20 +21,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zr6-Tk-mtQ">
                         <rect key="frame" x="10" y="10" width="300" height="71"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="j6d-aq-zkV" userLabel="Horizontal Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j6d-aq-zkV" userLabel="Horizontal Stack View">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="71"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oIr-vZ-jiB" userLabel="Vertical Name Email Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="272.33333333333331" height="71"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="277.33333333333331" height="71"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeU-7v-W7e" userLabel="Name">
-                                                <rect key="frame" x="0.0" y="0.0" width="272.33333333333331" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="277.33333333333331" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hD-uA-GgB" userLabel="Email">
-                                                <rect key="frame" x="0.0" y="38" width="272.33333333333331" height="33"/>
+                                                <rect key="frame" x="0.0" y="38" width="277.33333333333331" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -46,12 +46,8 @@
                                         <color key="tintColor" systemColor="labelColor"/>
                                     </imageView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="4fw-lH-HMf" secondAttribute="trailing" id="hCO-Cs-VVd"/>
-                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="j6d-aq-zkV" secondAttribute="trailing" id="8dc-ae-tAt"/>
                             <constraint firstItem="j6d-aq-zkV" firstAttribute="leading" secondItem="Zr6-Tk-mtQ" secondAttribute="leading" id="K3S-Md-mHt"/>
@@ -80,9 +76,6 @@
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -21,9 +21,13 @@ class UserDetailViewController: UIViewController {
 			userData[2].value = user.phone
 			userData[3].value = user.website
 			
+			// Table View should be update on main thread.
 			DispatchQueue.main.async {
 				self.tableView.reloadData()
+				
+				// To ensure layout is calculated before assigning a height
 				self.tableView.layoutIfNeeded()
+				
 				self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
 				self.tableView.isHidden = false
 			}
@@ -45,7 +49,7 @@ class UserDetailViewController: UIViewController {
 		
 		initTableView()
 	}
-
+	
 	private func initTableView(){
 		tableView.dataSource = self
 		tableView.register(UINib(nibName: "UserDetailCell", bundle: nil), forCellReuseIdentifier: "UserDetailCell")
