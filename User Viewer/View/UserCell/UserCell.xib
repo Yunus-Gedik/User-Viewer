@@ -21,10 +21,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zr6-Tk-mtQ">
                         <rect key="frame" x="10" y="10" width="300" height="71"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="j6d-aq-zkV" userLabel="Vertical Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="j6d-aq-zkV" userLabel="Horizontal Stack View">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="71"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oIr-vZ-jiB" userLabel="Name Email Stack View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oIr-vZ-jiB" userLabel="Vertical Name Email Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="272.33333333333331" height="71"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeU-7v-W7e" userLabel="Name">

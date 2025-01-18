@@ -7,8 +7,8 @@
 
 import Foundation
 
-class UserDataFetcher {
-	static func fetchUsers(completion: @escaping (Result<[User], Error>) -> Void) {
+class UserDataFetcher : UserDataRepository{
+	func fetchUsers(completion: @escaping (Result<[User], Error>) -> Void) {
 		// Define the URL for the GET request
 		guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
 			completion(.failure(NSError(
@@ -49,4 +49,6 @@ class UserDataFetcher {
 		// Start the data task
 		task.resume()
 	}
+	
+
 }

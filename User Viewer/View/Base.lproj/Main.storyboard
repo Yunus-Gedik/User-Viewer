@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gX3-WL-F1E">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gX3-WL-F1E">
                                 <rect key="frame" x="10" y="113" width="373" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -68,14 +68,33 @@
                     <view key="view" contentMode="scaleToFill" id="fgB-4E-CE6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-WL-0so">
+                                <rect key="frame" x="10" y="113" width="373" height="600"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="9Wa-Cv-Lqj"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yHQ-yN-dNa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yHQ-yN-dNa" firstAttribute="trailing" secondItem="VBP-WL-0so" secondAttribute="trailing" constant="10" id="cb7-hl-2jt"/>
+                            <constraint firstItem="VBP-WL-0so" firstAttribute="leading" secondItem="yHQ-yN-dNa" secondAttribute="leading" constant="10" id="cdF-Dx-rBR"/>
+                            <constraint firstItem="yHQ-yN-dNa" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VBP-WL-0so" secondAttribute="bottom" constant="10" id="r46-aJ-YXB"/>
+                            <constraint firstItem="VBP-WL-0so" firstAttribute="top" secondItem="yHQ-yN-dNa" secondAttribute="top" constant="10" id="xmt-eC-vlD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="o6P-OD-Msy"/>
+                    <connections>
+                        <outlet property="tableView" destination="VBP-WL-0so" id="uYY-nb-Ih1"/>
+                        <outlet property="tableViewHeightConstraint" destination="9Wa-Cv-Lqj" id="ZHN-y9-iQw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fko-bb-Kcf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="485" y="-595"/>
+            <point key="canvasLocation" x="484.73282442748092" y="-595.07042253521126"/>
         </scene>
     </scenes>
     <resources>

@@ -29,8 +29,8 @@ class UserListViewController: UIViewController {
 		tableView.layer.cornerRadius = 20.0
 	}
 	
-	private func setUserData(){
-		UserDataFetcher.fetchUsers { result in
+	private func setUserData(userDataFetcher: UserDataRepository = UserDataFetcher()){
+		userDataFetcher.fetchUsers { result in
 			switch result {
 			case .success(let users):
 				self.userList = users + users
@@ -38,6 +38,7 @@ class UserListViewController: UIViewController {
 					self.tableView.reloadData()
 					self.tableView.layoutIfNeeded()
 					self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
+					self.tableView.isHidden = false
 				}
 			case .failure(let error):
 				print("Error fetching users: \(error)")
