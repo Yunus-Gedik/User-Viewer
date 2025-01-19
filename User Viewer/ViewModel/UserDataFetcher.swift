@@ -13,10 +13,19 @@ class UserDataFetcher: UserDataRepository {
 			throw URLError(.badURL)
 		}
 		
+		let data: Data
+		
+		// Try to fetch the data
 		do {
-			let (data, _) = try await URLSession.shared.data(from: url)
+			(data, _) = try await URLSession.shared.data(from: url)
+		} catch let error as URLError {
+			throw error
+		}
+		
+		// Try to decode the data
+		do {
 			return try JSONDecoder().decode([User].self, from: data)
-		} catch {
+		} catch let error as DecodingError {
 			throw error
 		}
 	}

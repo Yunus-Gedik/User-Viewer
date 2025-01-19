@@ -1,6 +1,6 @@
 import Foundation
 
-struct Address: Codable {
+struct Address: Codable, Equatable {
     let street: String
     let suite: String
     let city: String

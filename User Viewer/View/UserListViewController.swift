@@ -39,14 +39,17 @@ class UserListViewController: UIViewController {
 			case .success(let users):
 				self.userList = users
 				
-				// Table View should be update on main thread.
+				// Tableview should be update on main thread
 				DispatchQueue.main.async {
 					self.tableView.reloadData()
 					
 					// To ensure layout is calculated before assigning a height
 					self.tableView.layoutIfNeeded()
 					
+					// Make the tableview occupy only as much space as its content
 					self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
+					
+					// Make tableview visible when it is ready to show
 					self.tableView.isHidden = false
 				}
 			case .failure(let error):

@@ -45,11 +45,14 @@ class UserDetailViewController: UIViewController {
 		
 		tableView.layer.cornerRadius = 20.0
 				
-		// To ensure layout is calculated before assigning a height
+		/*
+		 Tableview has not naturally laid itself at this point yet
+		 To ensure layout is calculated before assigning a height, next line is needed
+		*/
 		self.tableView.layoutIfNeeded()
 		
+		// Make the tableview occupy only as much space as its content.
 		self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
-		self.tableView.isHidden = false
 	}
 	
 }
