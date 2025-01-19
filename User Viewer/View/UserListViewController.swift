@@ -29,8 +29,12 @@ class UserListViewController: UIViewController {
 		tableView.layer.cornerRadius = 20.0
 	}
 	
-	private func setUserData(userDataFetcher: UserDataRepository = UserDataFetcher()){
-		userDataFetcher.fetchUsers { result in
+	private func setUserData(){
+		let userDataViewModel = UserDataViewModel(repository: UserDataFetcher())
+		
+		userDataViewModel.fetchUserData { [weak self] result in
+			guard let self = self else { return }
+			
 			switch result {
 			case .success(let users):
 				self.userList = users

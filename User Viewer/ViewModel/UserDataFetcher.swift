@@ -7,48 +7,17 @@
 
 import Foundation
 
-class UserDataFetcher : UserDataRepository{
-	func fetchUsers(completion: @escaping (Result<[User], Error>) -> Void) {
-		// Define the URL for the GET request
+class UserDataFetcher: UserDataRepository {
+	func fetchUsers() async throws -> [User] {
 		guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
-			completion(.failure(NSError(
-				domain: "com.User-Viewer.network",
-				code: -1,
-				userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]
-			)))
-			return
+			throw URLError(.badURL)
 		}
 		
-		// Create the URLSession data task
-		let task = URLSession.shared.dataTask(with: url) { data, response, error in
-			// Check for errors
-			if let error = error {
-				completion(.failure(error))
-				return
-			}
-			
-			// Ensure valid response and data
-			guard let data = data else {
-				completion(.failure(NSError(
-					domain: "com.User-Viewer.network",
-					code: -1,
-					userInfo: [NSLocalizedDescriptionKey: "No data received"]
-				)))
-				return
-			}
-			
-			do {
-				// Decode the JSON data into an array of User objects
-				let users = try JSONDecoder().decode([User].self, from: data)
-				completion(.success(users))
-			} catch {
-				completion(.failure(error))
-			}
+		do {
+			let (data, _) = try await URLSession.shared.data(from: url)
+			return try JSONDecoder().decode([User].self, from: data)
+		} catch {
+			throw error
 		}
-		
-		// Start the data task
-		task.resume()
 	}
-	
-
 }
