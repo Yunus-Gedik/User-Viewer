@@ -44,9 +44,7 @@ class UserDetailViewController: UIViewController {
 		tableView.register(UINib(nibName: "UserDetailCell", bundle: nil), forCellReuseIdentifier: "UserDetailCell")
 		
 		tableView.layer.cornerRadius = 20.0
-		
-		self.tableView.reloadData()
-		
+				
 		// To ensure layout is calculated before assigning a height
 		self.tableView.layoutIfNeeded()
 		
