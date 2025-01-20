@@ -1,0 +1,13 @@
+Prerequisites:
+	- Swift Version 5
+	- Deployment Target iOS 15
+	- Connect to internet
+
+How to run:
+	- Open the "User Viewer.xcodeproj" file.
+	- In Xcode, choose a simulator or connected physical device from the top-left dropdown.
+	- Click the “Run” button in Xcode or press Cmd + R to build and launch the app.
+
+How to run tests:
+	- Follow first two steps of "How to run".
+	- Press Cmd + U to run tests.
